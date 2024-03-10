@@ -73,8 +73,8 @@ const SignUp = ({ open, setOpen }) => {
 
   return (
     <>
-      <Transition appear show={open || false}>
-        <Dialog as='div' className='relative z-10 ' onClose={closeModal}>
+      <Transition appear show={open}>
+        <Dialog as='div' className='relative z-10' onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter='ease-out duration-300'
@@ -88,7 +88,7 @@ const SignUp = ({ open, setOpen }) => {
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-y-auto '>
-            <div className='flex min-h-full items-center justify-center p-4 text-center '>
+            <div className='flex min-h-full items-center justify-center p-4 text-center mt-7'>
               <Transition.Child
                 as={Fragment}
                 enter='ease-out duration-300'

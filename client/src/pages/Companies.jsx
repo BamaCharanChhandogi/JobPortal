@@ -32,9 +32,10 @@ const Companies = () => {
         method:'GET'
       })
       setNumPage(res?.numOfPage);
-      setRecordsCount(res?.totalCompanies);
+      setRecordsCount(res?.total);
       setData(res?.data);
       setIsFetching(false);
+      console.log("Companies fetched:", res);
     } catch (error) {
       console.log(error);
     }
@@ -54,20 +55,20 @@ useEffect(() => {
   fetchCompanies();
 }, [page,sort,searchQuery])
   return (
-    <div className='w-full'>
-      <Header
+    <div className='w-full min-h-screen'>
+      {/* <Header
         title='Find Your Dream Company'
         handleClick={handleSearchSubmit}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={cmpLocation}
         setLocation={setCmpLocation}
-      />
+      /> */}
 
       <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd]'>
         <div className='flex items-center justify-between mb-4'>
           <p className='text-sm md:text-base'>
-            Shwoing: <span className='font-semibold'>1,902</span> Companies
+            Shwoing: <span className='font-semibold'>{recordsCount}</span> Companies
             Available
           </p>
 

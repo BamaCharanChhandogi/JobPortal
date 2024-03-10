@@ -201,11 +201,13 @@ const JobDetail = () => {
               const data = {
                 name: user?.name,
                 email: user?.email,
-                logo: user?.profileUrl,
                 ...job,
               };
               return <JobCard job={data} key={index} />;
             })}
+            {
+              console.log(job)
+            }
           </div>
         </div>
       </div>

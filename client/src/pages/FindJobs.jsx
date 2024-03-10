@@ -27,10 +27,10 @@ const FindJobs = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handelSearch = async(e) => {
-    e.preventDefault();
-    await fetchJobs();
-  }
+  // const handleSearch = async(e) => {
+  //   e.preventDefault();
+  //   await fetchJobs();
+  // };
   const fetchJobs = async () => {
     setIsFetching(true);
     const newURL = updateURL({
@@ -90,20 +90,20 @@ const FindJobs = () => {
     fetchJobs();
   }, [sort, filterJobTypes, filterExp, page]);
   return (
-    <div>
-      <Header
+    <div className="min-h-screen">
+      {/* <Header
         title="Find Your Dream Job with Ease"
         type="home"
-        handleClick={handelSearch}
+        handleClick={handleSearch}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={jobLocation}
         setLocation={setJobLocation}
-      />
+      /> */}
 
-      <div className="container mx-auto flex gap-6 2xl:gap-10 md:px-5 py-0 md:py-6 bg-[#f7fdfd]">
-        <div className="hidden md:flex flex-col w-1/6 h-fit bg-white shadow-sm">
-          <p className="text-lg font-semibold text-slate-600">Filter Search</p>
+      <div className="container mx-auto flex gap-6 2xl:gap-10 md:px-5 py-0 md:py-6 bg-slate-200">
+        <div className="hidden md:flex flex-col w-1/6 h-fit bg-slate-200 shadow-sm">
+          <p className="text-lg font-semibold">Filter Search</p>
 
           <div className="py-2">
             <div className="flex justify-between mb-3">

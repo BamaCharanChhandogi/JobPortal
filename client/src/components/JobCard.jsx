@@ -11,7 +11,7 @@ const JobCard = ({ job }) => {
       >
         <div className='flex gap-3'>
           <img
-            src={job?.logo}
+            src={job?.logo || job?.company?.profileUrl}
             alt={job?.name}
             className='w-14 h-14'
           />

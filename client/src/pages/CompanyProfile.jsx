@@ -256,7 +256,7 @@ const CompanyProfile = () => {
                   containerStyles={`py-1.5 px-3 md:px-5 focus:outline-none bg-blue-600  hover:bg-blue-700 text-white rounded text-sm md:text-base border border-blue-600`}
                 />
 
-                <Link to='/upload-job'>
+                <Link to='/post-job'>
                   <CustomButton
                     title='Upload Job'
                     iconRight={<FiUpload />}
@@ -298,6 +298,7 @@ const CompanyProfile = () => {
             };
             return <JobCard job={data} key={index} />;
           })}
+          {console.log(info)}
         </div>
       </div>
 

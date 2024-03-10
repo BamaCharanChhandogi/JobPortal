@@ -12,6 +12,7 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+import Applications from "./pages/Applications";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -27,7 +28,7 @@ function Layout() {
 function App() {
   const { user } = useSelector((state) => state.user);
   return (
-    <main className='bg-[#f7fdfd]'>
+    <main className='bg-[#f7fdfd] '>
       <Navbar />
 
       <Routes>
@@ -49,7 +50,8 @@ function App() {
 
           <Route path={"/company-profile"} element={<CompanyProfile />} />
           <Route path={"/company-profile/:id"} element={<CompanyProfile />} />
-          <Route path={"/upload-job"} element={<UploadJob />} />
+          <Route path={"/post-job"} element={<UploadJob />} />
+          <Route path={"/applications"} element={<Applications />} />
           <Route path={"/job-detail/:id"} element={<JobDetail />} />
         </Route>
 

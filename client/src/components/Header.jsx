@@ -42,44 +42,45 @@ const Header = ({
   setLocation,
 }) => {
   return (
-    <div className='bg-[#f7fdfd]'>
+    <div>
       <div
-        className={`container mx-auto px-5 ${
-          type ? "h-[500px]" : "h-[350px]"
+        className={`container mx-auto ${
+          type ? "h-auto" : "h-auto"
         } flex items-center relative`}
       >
         <div className='w-full z-10'>
-          <div className='mb-8'>
+          {/* <div className='mb-8'>
             <p className='text-slate-700 font-bold text-4xl'>{title}</p>
-          </div>
+          </div> */}
 
-          <div className='w-full flex items-center justify-around bg-white px-2 md:px-5 py-2.5 md:py-6 shadow-2xl rounded-full'>
+          <div className='w-full flex items-center justify-around bg-white py-2 shadow-2xl rounded-lg'>
             <SearchInput
-              placeholder='Job Title or Keywords'
-              icon={<AiOutlineSearch className='text-gray-600 text-xl' />}
+              placeholder='Type Job Title'
+              icon={<AiOutlineSearch className='text-xl' />}
               value={searchQuery}
+              styles={"text-slate-900"}
               setValue={setSearchQuery}
             />
-            <SearchInput
+            {/* <SearchInput
               placeholder='Add Country or City'
               icon={<CiLocationOn className='text-gray-600 text-xl' />}
               value={location}
               setValue={setLocation}
               styles={"hidden md:flex"}
-            />
+            /> */}
 
             <div>
               <CustomButton
                 onClick={handleClick}
                 title='Search'
                 containerStyles={
-                  "text-white py-2 md:py3 px-3 md:px-10 focus:outline-none bg-blue-600 rounded-full md:rounded-md text-sm md:text-base"
+                  "text-white py-2 md:py-2 px-2 md:px-4  focus:outline-none bg-blue-600 rounded-full md:rounded-md text-sm md:text-base"
                 }
               />
             </div>
           </div>
 
-          {type && (
+          {/* {type && (
             <div className='w-full lg:1/2 flex flex-wrap gap-3 md:gap-6 py-10 md:py-14'>
               {popularSearch.map((search, index) => (
                 <span
@@ -90,12 +91,12 @@ const Header = ({
                 </span>
               ))}
             </div>
-          )}
+          )} */}
         </div>
 
-        <div className='w-1/3 h-full absolute top-24 md:-top-6 lg:-top-14 right-16 2xl:right-[18rem]'>
+        {/* <div className='w-1/3 h-full absolute top-24 md:-top-6 lg:-top-14 right-16 2xl:right-[18rem]'>
           <img src={HeroImage} className='object-contain' />
-        </div>
+        </div> */}
       </div>
     </div>
   );

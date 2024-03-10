@@ -7,7 +7,7 @@ import WhatsApp from "./whatsapp.png";
 import Twitter from "./twitter.png";
 import Instagram from "./instagram.png";
 import Spotify from "./spotify.png";
-import Office from "./office.jpg";
+import Office from "./office.png";
 import JobImg from "./job.jpg";
 import Facebook from "./facebook.png";
 import CodeWave from "./codewave.png";
