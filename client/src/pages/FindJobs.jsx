@@ -59,32 +59,32 @@ const FindJobs = () => {
   };
   const filterJobs = (val) => {
     if (filterJobTypes?.includes(val)) {
-      setFilterJobTypes(filterJobTypes.filter((el) => el != val));
+      setFilterJobTypes(filterJobTypes.filter((el) => el !== val));
     } else {
       setFilterJobTypes([...filterJobTypes, val]);
     }
-  };
-
+  };  
   const filterExperience = async (e) => {
-    if(expVal?.includes(e)){
-      setExpVal(expVal.filter((el) => el != e));
+    if(expVal.includes(e)) {
+      setExpVal(expVal.filter((el) => el !== e));
     } else {
       setExpVal([...expVal, e]);
     }
   };
+  
   useEffect(() => {
     if (expVal.length > 0) {
       let newExpVal = [];
-
+  
       expVal?.map((el) => {
-        const newEl = el?.split("-");
+        const newEl = el.split("-");
         newExpVal.push(Number(newEl[0]), Number(newEl[1]));
       });
-
-      newExpVal.sort((a, b) => a - b);
-      setFilterExp(`${newExpVal[0]}-${newExpVal[newExpVal?.length]}`);
+  
+      newExpVal?.sort((a, b) => a - b);
+      setFilterExp(`${newExpVal[0]}-${newExpVal[newExpVal.length - 1]}`);
     }
-  }, [expVal]);
+  }, [expVal]);  
 
   useEffect(() => {
     fetchJobs();
@@ -176,13 +176,13 @@ const FindJobs = () => {
 
           <div className="w-full flex flex-wrap gap-4">
             {data?.map((job, index) => {
-              const data = {
+              const newJob = {
                 name: job?.company?.name,
                 email: job?.company?.email,
                 logo: job?.company?.profileUrl,
                 ...job,
               };
-              return <JobCard job={data} key={index} />;
+              return <JobCard job={newJob} key={index} />;
             })}
           </div>
 

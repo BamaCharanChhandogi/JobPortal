@@ -268,7 +268,7 @@ const UserProfile = () => {
 
         <hr />
 
-        <div className='w-full py-10'>
+        <div className='w-full py-10 justify-around'>
           <div className='w-full flex flex-col-reverse md:flex-row gap-8 py-6'>
             <div className='w-full md:w-2/3 flex flex-col gap-4 text-lg text-slate-600 mt-20 md:mt-0'>
               <p className='text-[#0536e7]  font-semibold text-2xl'>ABOUT</p>
@@ -277,14 +277,14 @@ const UserProfile = () => {
               </span>
             </div>
 
-            <div className='w-full md:w-1/3 h-44'>
+            <div className='w-full md:w-1/3 h-44 flex flex-col justify-center items-center'>
               <img
                 src={userInfo?.profileUrl}
                 alt={userInfo?.firstName}
                 className='w-full h-48 object-contain rounded-lg'
               />
               <button
-                className='w-full md:w-64 bg-blue-600 text-white mt-4 py-2 rounded'
+                className='w-fit md:w-52 bg-blue-600 text-white mt-4 py-2 rounded'
                 onClick={() => setOpen(true)}
               >
                 Edit Profile
